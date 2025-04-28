@@ -5,7 +5,7 @@ import com.example.demo.adapterts.dto.userDTO.UserResponseDTO;
 import com.example.demo.application.exceptions.DuplicateUserException;
 import com.example.demo.application.exceptions.UserNotFoundException;
 import com.example.demo.domain.entities.User;
-import com.example.demo.infrastructure.configs.mapstruct.UserMapper;
+import com.example.demo.infrastructure.configs.mapper.UserMapper;
 import com.example.demo.infrastructure.repositorys.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -25,18 +25,18 @@ public class UserService {
             throw new DuplicateUserException("User with that name and email already exists.");
         }
 
-        return mapper.toResponse(repository.save(mapper.toEntity(request)));
+        return mapper.toresponse(repository.save(mapper.toEntity(request)));
     }
 
     public UserResponseDTO findById(Long id) {
         return repository.findById(id)
-                .map(mapper::toResponse)
+                .map(mapper::toresponse)
                 .orElseThrow(() -> new UserNotFoundException("User with ID " + id + " not found."));
     }
 
     public Page<UserResponseDTO> findAll(Pageable pageable) {
         return repository.findAll(pageable)
-                .map(mapper::toResponse);
+                .map(mapper::toresponse);
     }
 
     public UserResponseDTO update(Long id, UserRequestDTO request) {
@@ -51,7 +51,7 @@ public class UserService {
         user.setName(request.getName());
         user.setEmail(request.getEmail());
 
-        return mapper.toResponse(repository.save(user));
+        return mapper.toresponse(repository.save(user));
     }
 
     public void delete(Long id) {
