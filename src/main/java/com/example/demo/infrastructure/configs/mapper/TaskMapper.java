@@ -4,6 +4,8 @@ import com.example.demo.adapterts.dto.taskDTO.TaskRequestDTO;
 import com.example.demo.adapterts.dto.taskDTO.TaskResponseDTO;
 import com.example.demo.adapterts.dto.taskDTO.TaskSummaryDTO;
 import com.example.demo.domain.entities.Task;
+import com.example.demo.domain.entities.User;
+import com.example.demo.domain.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -14,8 +16,16 @@ public class TaskMapper {
 
     private final ModelMapper modelMapper;
 
-    public Task toEntity(TaskRequestDTO dto) {
-        return modelMapper.map(dto, Task.class);
+    public Task toEntity(TaskRequestDTO dto, User createdBy, User assignedTo) {
+        Task task = new Task();
+        task.setTitle(dto.getTitle());
+        task.setDescription(dto.getDescription());
+        task.setPriority(dto.getPriority());
+        task.setDueDate(dto.getDueDate());
+        task.setCreatedBy(createdBy);
+        task.setAssignedTo(assignedTo);
+        task.setStatus(Status.TO_DO);
+        return task;
     }
 
     public TaskResponseDTO toResponse(Task task) {

@@ -13,9 +13,9 @@ public class NoteMapper {
 
     private final ModelMapper modelMapper;
 
-    public Note toEntity(NoteRequestDTO dto) {
-        return modelMapper.map(dto, Note.class);
-    }
+//    public Note toEntity(NoteRequestDTO dto) {
+//        return modelMapper.map(dto, Note.class);
+//    }
 
     public NoteResponseDTO toResponse(Note note) {
         return modelMapper.map(note, NoteResponseDTO.class);

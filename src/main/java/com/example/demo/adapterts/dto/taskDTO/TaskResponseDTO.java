@@ -4,9 +4,7 @@ import com.example.demo.adapterts.dto.noteDTO.NoteResponseDTO;
 import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
 import com.example.demo.domain.enums.Priority;
 import com.example.demo.domain.enums.Status;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,7 +12,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class TaskResponseDTO {
 
     private Long id;

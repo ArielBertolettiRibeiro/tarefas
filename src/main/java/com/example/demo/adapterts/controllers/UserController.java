@@ -2,6 +2,7 @@ package com.example.demo.adapterts.controllers;
 
 import com.example.demo.adapterts.dto.userDTO.UserRequestDTO;
 import com.example.demo.adapterts.dto.userDTO.UserResponseDTO;
+import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
 import com.example.demo.application.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -39,14 +40,14 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<UserResponseDTO>> findAll(@PageableDefault(size = 20, sort = "name")Pageable pageable) {
-        Page<UserResponseDTO> response = service.findAll(pageable);
+    public ResponseEntity<Page<UserSummaryDTO>> findAll(@PageableDefault(size = 20, sort = "name")Pageable pageable) {
+        Page<UserSummaryDTO> response = service.findAll(pageable);
 
         return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserResponseDTO> update(@PathVariable Long id, @RequestBody UserRequestDTO request) {
+    public ResponseEntity<UserResponseDTO> update(@PathVariable Long id, @Valid @RequestBody UserRequestDTO request) {
         UserResponseDTO response = service.update(id, request);
 
         return ResponseEntity.ok(response);

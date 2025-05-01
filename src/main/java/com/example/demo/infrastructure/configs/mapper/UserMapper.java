@@ -18,7 +18,7 @@ public class UserMapper {
         return  modelMapper.map(dto, User.class);
     }
 
-    public UserResponseDTO toresponse(User user) {
+    public UserResponseDTO toResponse(User user) {
         return modelMapper.map(user, UserResponseDTO.class);
     }
 
