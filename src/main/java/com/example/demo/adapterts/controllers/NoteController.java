@@ -19,16 +19,14 @@ public class NoteController {
 
     @PostMapping
     public ResponseEntity<NoteResponseDTO> create(@PathVariable Long taskId, @Valid @RequestBody NoteRequestDTO request) {
-//        request.setTaskId(taskId);
-
         NoteResponseDTO response = service.create(taskId, request);
+
         return ResponseEntity.created(URI.create("/tasks/" + taskId + "/notes/" + response.getId()))
                 .body(response);
     }
 
     @GetMapping
     public ResponseEntity<List<NoteResponseDTO>> findAllByTask(@PathVariable Long taskId) {
-        List<NoteResponseDTO> response = service.findAllByTask(taskId);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(service.findAllByTask(taskId));
     }
 }

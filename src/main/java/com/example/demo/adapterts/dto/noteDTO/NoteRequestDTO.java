@@ -14,9 +14,6 @@ public class NoteRequestDTO {
     @NotBlank(message = "Content is required")
     private String content;
 
-//    @NotNull(message = "Task ID is required")
-//    private Long taskId;
-
     @NotNull(message = "Author ID is required")
     private Long authorId;
 }

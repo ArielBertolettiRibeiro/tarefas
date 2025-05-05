@@ -8,13 +8,10 @@ import com.example.demo.domain.enums.Status;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.util.List;
 
-@Controller
 @RequestMapping("/tasks")
 @RestController
 @RequiredArgsConstructor
@@ -54,7 +51,6 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
-
         return ResponseEntity.noContent().build();
     }
 
