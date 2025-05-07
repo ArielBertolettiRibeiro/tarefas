@@ -1,15 +1,14 @@
 package com.example.demo.application.services;
 
-import com.example.demo.adapterts.dto.taskDTO.TaskRequestDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskResponseDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskSummaryDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskRequestDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskResponseDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskSummaryDTO;
 import com.example.demo.application.exceptions.TaskNotFoundException;
 import com.example.demo.application.exceptions.UserNotFoundException;
 import com.example.demo.domain.entities.Task;
 import com.example.demo.domain.entities.User;
 import com.example.demo.domain.enums.Status;
 import com.example.demo.infrastructure.configs.mapper.TaskMapper;
-import com.example.demo.infrastructure.configs.mapper.UserMapper;
 import com.example.demo.infrastructure.repositorys.TaskRepository;
 import com.example.demo.infrastructure.repositorys.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +24,6 @@ public class TaskService {
     private final TaskRepository repository;
     private final UserRepository userRepository;
     private final TaskMapper mapper;
-    private final UserMapper userMapper;
 
     @Transactional
     public TaskResponseDTO create(TaskRequestDTO request) {

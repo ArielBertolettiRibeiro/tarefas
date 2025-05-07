@@ -1,8 +1,8 @@
 package com.example.demo.infrastructure.configs.mapper;
 
-import com.example.demo.adapterts.dto.taskDTO.TaskRequestDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskResponseDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskSummaryDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskRequestDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskResponseDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskSummaryDTO;
 import com.example.demo.domain.entities.Task;
 import com.example.demo.domain.entities.User;
 import com.example.demo.domain.enums.Status;

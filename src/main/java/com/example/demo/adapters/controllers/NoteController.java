@@ -1,7 +1,7 @@
-package com.example.demo.adapterts.controllers;
+package com.example.demo.adapters.controllers;
 
-import com.example.demo.adapterts.dto.noteDTO.NoteRequestDTO;
-import com.example.demo.adapterts.dto.noteDTO.NoteResponseDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteRequestDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteResponseDTO;
 import com.example.demo.application.services.NoteService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
-package com.example.demo.adapterts.controllers;
+package com.example.demo.adapters.controllers;
 
-import com.example.demo.adapterts.dto.taskDTO.TaskRequestDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskResponseDTO;
-import com.example.demo.adapterts.dto.taskDTO.TaskSummaryDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskRequestDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskResponseDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskSummaryDTO;
 import com.example.demo.application.services.TaskService;
 import com.example.demo.domain.enums.Status;
 import jakarta.validation.Valid;
@@ -34,7 +34,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TaskResponseDTO> update(@PathVariable Long id, @RequestBody TaskRequestDTO request) {
+    public ResponseEntity<TaskResponseDTO> update(@PathVariable Long id,@Valid @RequestBody TaskRequestDTO request) {
         return ResponseEntity.ok(service.update(id, request));
     }
 

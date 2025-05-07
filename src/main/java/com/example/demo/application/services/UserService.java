@@ -1,8 +1,8 @@
 package com.example.demo.application.services;
 
-import com.example.demo.adapterts.dto.userDTO.UserRequestDTO;
-import com.example.demo.adapterts.dto.userDTO.UserResponseDTO;
-import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
+import com.example.demo.adapters.dto.userDTO.UserRequestDTO;
+import com.example.demo.adapters.dto.userDTO.UserResponseDTO;
+import com.example.demo.adapters.dto.userDTO.UserSummaryDTO;
 import com.example.demo.application.exceptions.DuplicateUserException;
 import com.example.demo.application.exceptions.UserNotFoundException;
 import com.example.demo.domain.entities.User;

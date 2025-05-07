@@ -1,7 +1,7 @@
 package com.example.demo.application.services;
 
-import com.example.demo.adapterts.dto.noteDTO.NoteRequestDTO;
-import com.example.demo.adapterts.dto.noteDTO.NoteResponseDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteRequestDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteResponseDTO;
 import com.example.demo.application.exceptions.TaskNotFoundException;
 import com.example.demo.application.exceptions.UserNotFoundException;
 import com.example.demo.domain.entities.Note;

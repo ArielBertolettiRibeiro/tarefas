@@ -14,31 +14,31 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHnadler {
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<ErrorReponse> handleUserNotFound(UserNotFoundException ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> handleUserNotFound(UserNotFoundException ex, HttpServletRequest request) {
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, request);
     }
 
     @ExceptionHandler(TaskNotFoundException.class)
-    public ResponseEntity<ErrorReponse> handleTaskNotFound(TaskNotFoundException ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> handleTaskNotFound(TaskNotFoundException ex, HttpServletRequest request) {
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, request);
     }
 
     @ExceptionHandler(DuplicateUserException.class)
-    public ResponseEntity<ErrorReponse> handleDuplicateUser(DuplicateUserException ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> handleDuplicateUser(DuplicateUserException ex, HttpServletRequest request) {
         return buildErrorResponse(ex, HttpStatus.CONFLICT, request);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorReponse> handleValidationException(MethodArgumentNotValidException ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex, HttpServletRequest request) {
         List<String> errors = ex.getBindingResult().getFieldErrors()
                 .stream()
                 .map(this::formatFieldError)
                 .toList();
 
-        ErrorReponse errorReponse = new ErrorReponse(
+        ErrorResponse errorReponse = new ErrorResponse(
                 LocalDateTime.now(),
                 HttpStatus.BAD_REQUEST.value(),
                 "Validation Failed",
@@ -51,12 +51,12 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorReponse> buildErrorResponse(Exception ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> buildErrorResponse(Exception ex, HttpServletRequest request) {
         return buildErrorResponse(ex, HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
-    private ResponseEntity<ErrorReponse> buildErrorResponse(Exception ex, HttpStatus status, HttpServletRequest request) {
-        ErrorReponse errorReponse = new ErrorReponse(
+    private ResponseEntity<ErrorResponse> buildErrorResponse(Exception ex, HttpStatus status, HttpServletRequest request) {
+        ErrorResponse errorReponse = new ErrorResponse(
                 LocalDateTime.now(),
                 status.value(),
                 status.getReasonPhrase(),
@@ -71,5 +71,4 @@ public class GlobalExceptionHandler {
     private String formatFieldError(FieldError fieldError) {
         return String.format("Field '%s': %s", fieldError.getField(), fieldError.getDefaultMessage());
     }
-
 }

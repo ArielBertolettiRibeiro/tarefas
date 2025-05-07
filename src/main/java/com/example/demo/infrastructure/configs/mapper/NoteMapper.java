@@ -1,7 +1,6 @@
 package com.example.demo.infrastructure.configs.mapper;
 
-import com.example.demo.adapterts.dto.noteDTO.NoteRequestDTO;
-import com.example.demo.adapterts.dto.noteDTO.NoteResponseDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteResponseDTO;
 import com.example.demo.domain.entities.Note;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;

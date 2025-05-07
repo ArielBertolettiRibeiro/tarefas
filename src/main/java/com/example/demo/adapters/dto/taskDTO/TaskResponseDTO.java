@@ -1,11 +1,10 @@
-package com.example.demo.adapterts.dto.taskDTO;
+package com.example.demo.adapters.dto.taskDTO;
 
-import com.example.demo.adapterts.dto.noteDTO.NoteResponseDTO;
-import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
+import com.example.demo.adapters.dto.noteDTO.NoteResponseDTO;
+import com.example.demo.adapters.dto.userDTO.UserSummaryDTO;
 import com.example.demo.domain.enums.Priority;
 import com.example.demo.domain.enums.Status;
 import lombok.*;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;

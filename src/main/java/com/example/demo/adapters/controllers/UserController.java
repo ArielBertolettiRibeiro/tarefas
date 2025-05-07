@@ -1,8 +1,8 @@
-package com.example.demo.adapterts.controllers;
+package com.example.demo.adapters.controllers;
 
-import com.example.demo.adapterts.dto.userDTO.UserRequestDTO;
-import com.example.demo.adapterts.dto.userDTO.UserResponseDTO;
-import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
+import com.example.demo.adapters.dto.userDTO.UserRequestDTO;
+import com.example.demo.adapters.dto.userDTO.UserResponseDTO;
+import com.example.demo.adapters.dto.userDTO.UserSummaryDTO;
 import com.example.demo.application.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

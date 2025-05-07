@@ -1,4 +1,4 @@
-package com.example.demo.adapterts.dto.noteDTO;
+package com.example.demo.adapters.dto.noteDTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

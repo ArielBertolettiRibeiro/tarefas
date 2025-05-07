@@ -1,12 +1,10 @@
-package com.example.demo.adapterts.dto.taskDTO;
+package com.example.demo.adapters.dto.taskDTO;
 
 import com.example.demo.domain.enums.Priority;
-import com.example.demo.domain.enums.Status;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
 import java.time.LocalDate;
 
 @AllArgsConstructor

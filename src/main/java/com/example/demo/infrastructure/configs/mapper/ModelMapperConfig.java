@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure.configs.mapper;
 
-import com.example.demo.adapterts.dto.taskDTO.TaskResponseDTO;
-import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
+import com.example.demo.adapters.dto.taskDTO.TaskResponseDTO;
+import com.example.demo.adapters.dto.userDTO.UserSummaryDTO;
 import com.example.demo.domain.entities.Task;
 import com.example.demo.domain.entities.User;
 import org.modelmapper.ModelMapper;

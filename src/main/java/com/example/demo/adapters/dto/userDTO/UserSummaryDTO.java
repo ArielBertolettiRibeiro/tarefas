@@ -1,4 +1,4 @@
-package com.example.demo.adapterts.dto.userDTO;
+package com.example.demo.adapters.dto.userDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserResponseDTO {
+public class UserSummaryDTO {
 
     private Long id;
     private String name;
     private String email;
+
 }

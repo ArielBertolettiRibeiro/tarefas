@@ -1,4 +1,4 @@
-package com.example.demo.adapterts.dto.taskDTO;
+package com.example.demo.adapters.dto.taskDTO;
 
 import com.example.demo.domain.enums.Status;
 import lombok.AllArgsConstructor;

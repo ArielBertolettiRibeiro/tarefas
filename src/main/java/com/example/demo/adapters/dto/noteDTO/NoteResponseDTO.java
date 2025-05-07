@@ -1,10 +1,9 @@
-package com.example.demo.adapterts.dto.noteDTO;
+package com.example.demo.adapters.dto.noteDTO;
 
-import com.example.demo.adapterts.dto.userDTO.UserSummaryDTO;
+import com.example.demo.adapters.dto.userDTO.UserSummaryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
